@@ -1,0 +1,88 @@
+<div class="section">
+  <h2>Create Project</h2>
+
+  <!-- quick row: name + open wizard -->
+  <div class="row" style="gap:10px; max-width:680px">
+    <input id="quickProjectName" class="input" placeholder="Project name (required)" />
+    <button id="openCreateWizard" class="btn green">Create project</button>
+  </div>
+  <p class="muted" style="margin-top:8px">
+    Name is required. You can add assignees, deadline and a budget right after clicking “Create project”.
+  </p>
+</div>
+
+<!-- Create Project Wizard (modal) -->
+<div class="modal" id="createWizard">
+  <div class="panel">
+    <div class="spaced">
+      <h3 style="margin:0">New project</h3>
+      <button class="btn" data-close>Close</button>
+    </div>
+
+    <form id="createProjectForm" style="margin-top:12px">
+      <!-- Project name -->
+      <label style="display:block; margin-bottom:6px">Project name <span class="muted">(required)</span></label>
+      <input id="cp_name" class="input" placeholder="e.g. Gearbox Rev-C" required />
+
+      <!-- Assigned engineers -->
+      <div style="margin-top:14px">
+        <label style="display:block; margin-bottom:6px">Assigned engineers <span class="muted">(optional)</span></label>
+        <div class="row" style="gap:8px; flex-wrap:wrap">
+          <!-- simple chip-style checkboxes -->
+          <label class="chip toggle" style="cursor:pointer">
+            <input type="checkbox" name="engineers" value="Elvijs" style="display:none"> Elvijs
+          </label>
+          <label class="chip toggle" style="cursor:pointer">
+            <input type="checkbox" name="engineers" value="Juris" style="display:none"> Juris
+          </label>
+          <label class="chip toggle" style="cursor:pointer">
+            <input type="checkbox" name="engineers" value="Marta" style="display:none"> Marta
+          </label>
+          <label class="chip toggle" style="cursor:pointer">
+            <input type="checkbox" name="engineers" value="Anna" style="display:none"> Anna
+          </label>
+          <label class="chip toggle" style="cursor:pointer">
+            <input type="checkbox" name="engineers" value="Igors" style="display:none"> Igors
+          </label>
+          <label class="chip toggle" style="cursor:pointer">
+            <input type="checkbox" name="engineers" value="Ruta" style="display:none"> Ruta
+          </label>
+        </div>
+        <div class="muted" style="font-size:12px; margin-top:6px">
+          Tip: you can assign more teammates later from the project card.
+        </div>
+      </div>
+
+      <!-- Deadline + Budget row -->
+      <div class="row" style="gap:10px; margin-top:14px">
+        <div style="flex:1">
+          <label style="display:block; margin-bottom:6px">Deadline <span class="muted">(optional)</span></label>
+          <input id="cp_deadline" class="input" type="date">
+        </div>
+        <div style="flex:1">
+          <label style="display:block; margin-bottom:6px">Max hours (budget) <span class="muted">(optional)</span></label>
+          <input id="cp_budget" class="input" type="number" min="0" step="1" placeholder="e.g. 120">
+        </div>
+      </div>
+
+      <!-- Optional: initial column -->
+      <div style="margin-top:14px">
+        <label style="display:block; margin-bottom:6px">Initial state</label>
+        <select id="cp_state" class="input">
+          <option value="progress">In Progress</option>
+          <option value="review">In Review</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+
+      <!-- Submit -->
+      <div class="row" style="gap:8px; margin-top:16px">
+        <button class="btn green" type="submit">Create</button>
+        <button class="btn" type="button" data-close>Cancel</button>
+      </div>
+
+      <!-- Lightweight result area -->
+      <div id="cp_result" class="muted" style="display:none; margin-top:12px"></div>
+    </form>
+  </div>
+</div>

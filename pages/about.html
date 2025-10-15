@@ -1,0 +1,323 @@
+<div class="surface section">
+  <h2>Par produktu</h2>
+  <p><strong>Nosaukums:</strong> Operations Projects Tracker (OPT)</p>
+
+  <!-- ===== Apraksts un mērķis ===== -->
+  <h3 style="margin-top:10px">Apraksts un mērķis</h3>
+  <p class="muted">
+    <strong>Buschmann Tools</strong> inženieru stundu uzskaites un informācijas kopsavilkuma rīks
+    ar <strong>AI</strong> integrāciju, kas apkopo saturu no <strong>Google Chat</strong> grupām.
+    OPT nodrošina Kanban pārskatu, stundu logus, problēmu (issues) pārvaldību un dziļas atskaites,
+    lai lēmumi tiktu pieņemti ātrāk un ar mazāku manuālu darbu.
+  </p>
+
+  <hr style="border:none;border-top:1px solid var(--line);margin:16px 0" />
+
+  <!-- ===== Overview ===== -->
+  <h3>Pārskats (Overview)</h3>
+  <p class="muted">Šī sadaļa atspoguļo projektus <em>kanban</em> stila kartiņās. Uz katras kartiņas redzams:</p>
+  <ul>
+    <li><strong>Atvērtās problēmas</strong> un <strong>atrisinātās problēmas</strong>.</li>
+    <li><strong>Individuālās inženieru stundas</strong> (mini joslas) un <strong>kopējās stundas</strong>.</li>
+    <li><strong>Budžets stundās</strong> (neobligāti) un <strong>termiņa progress</strong> (neobligāti).</li>
+    <li>Darbības: <strong>Ielogot stundas</strong>, <strong>Pievienot problēmu</strong>, <strong>Piesaistīt (Attach) issue</strong>.</li>
+  </ul>
+
+  <!-- Overview snippet -->
+  <div class="surface" style="padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px">
+    <div class="muted" style="font-size:12px;margin-bottom:6px">Piemērs — projekta kartiņa</div>
+    <div class="card" style="margin:0">
+      <div class="spaced">
+        <a class="pname" href="#" style="border-left:6px solid var(--green);padding-left:8px">Project: Double Falz Seamer 4×4</a>
+        <div class="row" style="gap:8px;flex-wrap:wrap">
+          <span class="pill"><span class="i" style="color:var(--green)">✔</span> Solved 2</span>
+          <span class="pill"><span class="i" style="color:var(--amber)">⧗</span> Pending 1</span>
+          <span class="pill"><span class="i">#</span> Total 3</span>
+        </div>
+      </div>
+
+      <div class="row" style="gap:18px;align-items:flex-start;margin-top:8px">
+        <!-- Left: hours by user -->
+        <div style="flex:1;min-width:260px">
+          <div class="muted" style="margin-bottom:6px">Hours by user</div>
+          <div class="mini-bars">
+            <div class="row" style="gap:8px;align-items:center"><span class="muted" style="width:64px">Elvijs</span><div class="bar" style="flex:1"><div class="fill" style="width:90%"></div></div><span class="muted">10h</span></div>
+            <div class="row" style="gap:8px;align-items:center;margin-top:6px"><span class="muted" style="width:64px">Juris</span><div class="bar" style="flex:1"><div class="fill" style="width:63%"></div></div><span class="muted">7h</span></div>
+            <div class="row" style="gap:8px;align-items:center;margin-top:6px"><span class="muted" style="width:64px">Anna</span><div class="bar" style="flex:1"><div class="fill" style="width:27%"></div></div><span class="muted">3h</span></div>
+          </div>
+        </div>
+        <!-- Right: budget progress -->
+        <div style="flex:1;min-width:260px;border-left:1px solid var(--line);padding-left:18px">
+          <div class="muted" style="font-size:12px">Progress (budget)</div>
+          <div style="font-size:28px;font-weight:800;line-height:1;margin-top:2px">38%</div>
+          <div class="bar" style="margin-top:8px"><div class="fill" style="width:38%"></div></div>
+          <div class="muted" style="text-align:right;margin-top:6px">21/55h</div>
+          <div class="row" style="gap:8px;flex-wrap:wrap;margin-top:10px">
+            <span class="pill red">Open 3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="gap:10px;margin-top:12px">
+        <button class="btn">Log hours</button>
+        <button class="btn">Open issue</button>
+        <button class="btn">Attach issue</button>
+      </div>
+
+      <div style="margin-top:10px">
+        <div class="muted" style="margin-bottom:6px">Attached issues</div>
+        <div class="row" style="gap:8px;flex-wrap:wrap">
+          <span class="pill"><span class="i">#</span>420 Conveyor chain tension variance <button class="btn sm">×</button></span>
+          <span class="pill"><span class="i">#</span>299 Parts labeling inconsistent <button class="btn sm">×</button></span>
+          <span class="pill"><span class="i">#</span>460 Assembly upgrade verification checklist <button class="btn sm">×</button></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details style="margin:4px 0 12px">
+    <summary class="muted">Par “Ielogot stundas” un “Pievienot problēmu” laukiem</summary>
+    <div class="row" style="gap:18px;flex-wrap:wrap;margin-top:10px">
+      <div class="surface" style="flex:1;min-width:280px;border:1px solid var(--line);border-radius:12px;padding:12px">
+        <div class="muted" style="font-size:12px;margin-bottom:6px">Ielogot stundas iekļauj</div>
+        <ul style="margin:0 0 4px 18px">
+          <li><strong>Inženiera vārds</strong></li>
+          <li><strong>Datums</strong> (atļauta atpakaļejoša ievade)</li>
+          <li><strong>Stundas</strong></li>
+          <li><strong>Komentārs</strong></li>
+        </ul>
+        <div class="muted" style="margin-top:6px">Modāļa paraugs</div>
+        <div class="panel" style="margin-top:6px">
+          <div class="spaced"><h4 style="margin:0">Log hours</h4><button class="btn">Close</button></div>
+          <div class="row" style="gap:10px;margin-top:10px">
+            <div style="flex:1"><label>User</label><input class="input" value="Juris" /></div>
+            <div style="flex:1"><label>Date</label><input class="input" type="date" value="2025-10-10" /></div>
+            <div style="flex:1"><label>Hours</label><input class="input" type="number" value="3" /></div>
+          </div>
+          <div style="margin-top:10px"><label>Comment</label><textarea class="input" rows="2" placeholder="I upgraded assembly"></textarea></div>
+          <div class="row" style="gap:8px;margin-top:12px"><button class="btn green">Save</button><button class="btn">Cancel</button></div>
+        </div>
+      </div>
+
+      <div class="surface" style="flex:1;min-width:280px;border:1px solid var(--line);border-radius:12px;padding:12px">
+        <div class="muted" style="font-size:12px;margin-bottom:6px">Pievienot problēmu iekļauj</div>
+        <ul style="margin:0 0 4px 18px">
+          <li><strong>Apraksts</strong></li>
+          <li><strong>Assigned engineer</strong> (neobligāti)</li>
+          <li><strong>Nozīmīgums</strong> (Low / Medium / High)</li>
+        </ul>
+        <div class="muted" style="margin-top:6px">Modāļa paraugs</div>
+        <div class="panel" style="margin-top:6px">
+          <div class="spaced"><h4 style="margin:0">Open issue</h4><button class="btn">Close</button></div>
+          <div class="row" style="gap:10px;margin-top:10px">
+            <div style="flex:2"><label>Description</label><input class="input" placeholder="Describe the problem" /></div>
+            <div style="flex:1"><label>Criticality</label><select class="input"><option>Low</option><option>Medium</option><option>High</option></select></div>
+          </div>
+          <div class="row" style="gap:10px;margin-top:10px">
+            <div style="flex:1"><label>Assignee (optional)</label><input class="input" placeholder="Global / pick user" /></div>
+            <div style="flex:1"><label>Attachment</label><input class="input" type="file" /></div>
+          </div>
+          <div class="row" style="gap:8px;margin-top:12px"><button class="btn green">Create issue</button><button class="btn">Cancel</button></div>
+        </div>
+      </div>
+
+      <div class="surface" style="flex:1;min-width:280px;border:1px solid var(--line);border-radius:12px;padding:12px">
+        <div class="muted" style="font-size:12px;margin-bottom:6px">Attach issue (Open / In-progress)</div>
+        <div class="panel">
+          <div class="spaced"><h4 style="margin:0">Attach issue to project</h4><button class="btn">Close</button></div>
+          <div class="muted" style="margin-top:6px">Showing issues with status: <strong>Open / In-progress</strong></div>
+          <div class="row" style="gap:10px;margin-top:10px">
+            <div style="flex:1"><label>Pick an issue</label><select class="input"><option>#412 — Wrong gear pitch shipped (DFS 4×4) — Open</option></select></div>
+          </div>
+          <div style="margin-top:10px"><label>Comment (optional)</label><textarea class="input" rows="2" placeholder="Why attach this issue?"></textarea></div>
+          <div class="row" style="gap:8px;margin-top:12px"><button class="btn green">Attach</button><button class="btn">Cancel</button></div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <hr style="border:none;border-top:1px solid var(--line);margin:16px 0" />
+
+  <!-- ===== Atskaites ===== -->
+  <h3>Atskaites (Reports)</h3>
+
+  <h4>Inženieru laika analīze</h4>
+  <ul>
+    <li><strong>Kopējais laiks</strong> pa inženieri un <strong>kopējais laiks uz projektu</strong>.</li>
+    <li><strong>Katrs time log</strong> ar komentāru.</li>
+    <li><strong>Cik atvēris</strong> un <strong>cik atrisinājis problēmas</strong>.</li>
+    <li><strong>Cik projektos</strong> ielogotas stundas.</li>
+    <li><strong>CSV eksports</strong> (kopsavilkums un detalizētie logi).</li>
+  </ul>
+
+  <!-- Engineer Time snippet -->
+  <div class="surface" style="padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px">
+    <div class="muted" style="font-size:12px;margin-bottom:6px">Reports → Engineer time</div>
+    <table>
+      <thead><tr><th>Engineer</th><th>Total hours</th><th>Projects</th><th>Role</th><th>Open/Closed</th></tr></thead>
+      <tbody>
+        <tr class="expand" data-expand="ab-eg-elvijs"><td>Elvijs</td><td>24</td><td>4</td><td>Senior Eng.</td><td>3 / 6</td></tr>
+        <tr id="ab-eg-elvijs" class="hide"><td colspan="5">
+          <table>
+            <thead><tr><th>Project</th><th>Hours</th><th>Logs</th><th>Open</th><th>Closed</th></tr></thead>
+            <tbody>
+              <tr><td>DFS 4×4</td><td>12</td><td>4</td><td>2</td><td>3</td></tr>
+              <tr><td>AccuSeamer Rev-B</td><td>8</td><td>3</td><td>1</td><td>2</td></tr>
+              <tr><td>XL-200 Bender</td><td>4</td><td>2</td><td>0</td><td>1</td></tr>
+            </tbody>
+          </table>
+        </td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Projektu laika atskaite</h4>
+  <ul>
+    <li><strong>Stundas uz katru projektu</strong> + sadalījums pa inženieriem.</li>
+    <li><strong>Top 5 ilgākie</strong> un <strong>Top 5 ātrākie</strong> projekti (slēpjami).</li>
+    <li><strong>CSV eksports</strong> (projekts×inženieris matrica).</li>
+  </ul>
+
+  <!-- Project Time snippet -->
+  <div class="surface" style="padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px">
+    <div class="muted" style="font-size:12px;margin-bottom:6px">Reports → Project time</div>
+    <div class="row" style="gap:10px;margin-bottom:10px">
+      <input class="input" style="max-width:260px" placeholder="Search projects (sample)" disabled />
+      <label class="row muted" style="gap:8px;font-size:13px"><input type="checkbox" disabled /> Hide idle (0h)</label>
+    </div>
+    <div class="row" style="gap:12px;flex-wrap:wrap">
+      <div class="surface project-item" style="border:1px solid var(--line);border-radius:12px;padding:12px;min-width:260px">
+        <strong>DFS 4×4</strong>
+        <div class="muted" style="font-size:12px;margin:6px 0 8px">Total: 98h • Open 3 • Closed 12</div>
+        <div class="mini-bars">
+          <div class="row" style="gap:8px"><span class="muted" style="width:76px">Elvijs</span><div class="bar" style="flex:1"><div class="fill" style="width:70%"></div></div><span class="muted">36h</span></div>
+          <div class="row" style="gap:8px;margin-top:6px"><span class="muted" style="width:76px">Juris</span><div class="bar" style="flex:1"><div class="fill" style="width:40%"></div></div><span class="muted">22h</span></div>
+          <div class="row" style="gap:8px;margin-top:6px"><span class="muted" style="width:76px">Anna</span><div class="bar" style="flex:1"><div class="fill" style="width:30%"></div></div><span class="muted">16h</span></div>
+        </div>
+      </div>
+
+      <div class="surface project-item" style="border:1px solid var(--line);border-radius:12px;padding:12px;min-width:260px">
+        <strong>AccuSeamer Rev-B</strong>
+        <div class="muted" style="font-size:12px;margin:6px 0 8px">Total: 71h • Open 2 • Closed 9</div>
+        <div class="mini-bars">
+          <div class="row" style="gap:8px"><span class="muted" style="width:76px">Marta</span><div class="bar" style="flex:1"><div class="fill" style="width:60%"></div></div><span class="muted">28h</span></div>
+          <div class="row" style="gap:8px;margin-top:6px"><span class="muted" style="width:76px">Ruta</span><div class="bar" style="flex:1"><div class="fill" style="width:38%"></div></div><span class="muted">18h</span></div>
+          <div class="row" style="gap:8px;margin-top:6px"><span class="muted" style="width:76px">Elvijs</span><div class="bar" style="flex:1"><div class="fill" style="width:25%"></div></div><span class="muted">12h</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--line);margin:16px 0" />
+
+  <!-- ===== Create a project ===== -->
+  <h3>Projekta izveide (Create a project)</h3>
+  <ul>
+    <li><strong>Projekta nosaukums</strong> (obligāts).</li>
+    <li><strong>Inženieru piesaiste</strong> — piesaistītie redz tikai savus projektus; bez piesaistes projekts ir redzams visiem.</li>
+    <li><strong>Termiņš pēc datuma</strong> (neobligāti).</li>
+    <li><strong>Termiņš pēc laika</strong> (neobligāti).</li>
+  </ul>
+
+  <!-- Create snippet -->
+  <div class="surface" style="padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px">
+    <div class="muted" style="font-size:12px;margin-bottom:6px">Create → Wizard (paraugs)</div>
+    <div class="row" style="gap:10px;flex-wrap:wrap">
+      <input class="input" placeholder="Project name" style="max-width:260px" />
+      <input class="input" placeholder="Assign engineers (comma-separated)" style="max-width:320px" />
+      <input class="input" type="date" />
+      <input class="input" type="time" />
+      <button class="btn green">Create</button>
+    </div>
+    <div class="muted" style="margin-top:6px;font-size:12px">Reālajā lietotnē forma atveras modālī ar papildu laukiem (budžets, statuss u.c.).</div>
+  </div>
+
+  <!-- ===== Users ===== -->
+  <h3>Lietotāji (Users)</h3>
+  <ul><li>Skats ar <strong>inženieru skaitu</strong> un <strong>lomām</strong>.</li></ul>
+  <div class="surface" style="padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px">
+    <table>
+      <thead><tr><th>Engineer</th><th>Role</th><th>Projects</th></tr></thead>
+      <tbody>
+        <tr><td>Elvijs</td><td>Senior Eng.</td><td>4</td></tr>
+        <tr><td>Juris</td><td>Manufacturing Eng.</td><td>3</td></tr>
+        <tr><td>Anna</td><td>Docs & QA</td><td>2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== Issues ===== -->
+  <h3>Problēmas (Issues)</h3>
+  <ul>
+    <li>Vieta, kur reģistrēt problēmas un piesaistīt tās projektiem/kartiņām.</li>
+    <li>Redzami statusi: <strong>Open</strong>, <strong>In-progress</strong>, <strong>Resolved</strong>.</li>
+  </ul>
+  <div class="surface" style="padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px">
+    <table>
+      <thead><tr><th>#</th><th>Nosaukums</th><th>Statuss</th><th>Projekts</th><th>Assignee</th></tr></thead>
+      <tbody>
+        <tr><td>412</td><td>Wrong gear pitch shipped (14T vs 16T)</td><td>Open</td><td>DFS 4×4</td><td>Marta</td></tr>
+        <tr><td>299</td><td>Parts labeling inconsistent</td><td>Resolved</td><td>AccuSeamer Rev-B</td><td>Anna</td></tr>
+        <tr><td>460</td><td>Assembly upgrade verification checklist</td><td>In-progress</td><td>DFS 4×4</td><td>Juris</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--line);margin:16px 0" />
+
+  <!-- ===== AI ===== -->
+  <h3>AI moduļa integrācija</h3>
+  <p class="muted">
+    Nospiežot uz projekta kartiņas (Overview), atveras sānu panelis ar <strong>AI</strong> ģenerētu kopsavilkumu no Google Chat.
+  </p>
+  <ul>
+    <li><strong>Informācijas kopsavilkums</strong> no gariem pavedieniem.</li>
+    <li><strong>Automātiska kategorizēšana</strong> (Supply, Machining, Assembly, QA) un filtri.</li>
+    <li><strong>AI atpazīst “issue”</strong> un <strong>atver</strong> to sistēmā.</li>
+    <li><strong>AI atpazīst atrisinājumu</strong> un <strong>aizver</strong> issue ar norādi, kā tas tika atrisināts.</li>
+  </ul>
+
+  <!-- AI sidebar snippet -->
+  <div class="surface" style="padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0">
+    <div class="muted" style="font-size:12px;margin-bottom:6px">Sidebar → AI kopsavilkums (paraugs)</div>
+    <div class="note">
+      <div class="header">
+        <strong>Summary</strong>
+        <span class="badge">Updated 10.10.2025 • 14:20</span>
+      </div>
+      <div class="chips">
+        <span class="chip active">Supply</span>
+        <span class="chip">Machining</span>
+        <span class="chip">Assembly</span>
+        <span class="chip">QA</span>
+      </div>
+      <div class="imgph">placeholder image / chart</div>
+      <div class="topic-divider">Topic: Supply & Logistics</div>
+      <ul>
+        <li>Vendor shipped <strong>14T</strong> instead of <strong>16T</strong>; RMA raised; express lot on the way.</li>
+        <li><strong>Solved</strong> by <strong>Ivans</strong> — courier reroute + RMA processed.</li>
+      </ul>
+    </div>
+
+    <div class="note" style="margin-top:10px">
+      <div class="header"><strong>Event history</strong></div>
+      <ul class="timeline">
+        <li class="open">Issue #412 “Wrong gear pitch shipped (14T vs 16T)” — <em>Open</em></li>
+        <li class="resolved">Ticket #405 “Courier delay on lot P-88” — <strong>Resolved</strong></li>
+      </ul>
+      <div class="muted" style="margin-top:6px">
+        Vēsture rāda: <em>kurš atvēra</em>, <em>kurš aizvēra</em>, un <em>kā tika atrisināts</em>.
+      </div>
+    </div>
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--line);margin:16px 0" />
+
+  <!-- ===== Noderīgi ===== -->
+  <h3>Noderīgi</h3>
+  <ul>
+    <li><strong>CSV eksports</strong> pieejams inženieru un projektu atskaitēs.</li>
+    <li><strong>Drag & Drop</strong> pārvelk projektus starp kolonnām Overview skatā.</li>
+    <li><strong>Drošība / atļaujas</strong> paredzētas integrācijai ar Google Workspace/SSO.</li>
+  </ul>
+</div>

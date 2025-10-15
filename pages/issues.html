@@ -1,0 +1,174 @@
+<!-- issues.html -->
+<div class="surface section">
+  <h2>Issues</h2>
+  <p class="muted" style="margin-top:-6px">All currently opened issues across projects. Use the filter to narrow by project.</p>
+
+  <!-- KPIs -->
+  <div class="row" style="gap:12px; flex-wrap:wrap; margin:14px 0 6px">
+    <div class="surface" style="padding:10px 12px; border-radius:12px; border:1px solid var(--line); min-width:170px;">
+      <div class="muted" style="font-size:12px; display:flex; align-items:center; gap:8px;">
+        <span>📋</span> Total
+      </div>
+      <div style="font-weight:700; font-size:20px;"><span id="k_all">–</span></div>
+    </div>
+    <div class="surface" style="padding:10px 12px; border-radius:12px; border:1px solid var(--line); min-width:170px;">
+      <div class="muted" style="font-size:12px; display:flex; align-items:center; gap:8px;">
+        <span style="color:var(--red)">⦿</span> Open
+      </div>
+      <div style="font-weight:700; font-size:20px;"><span id="k_open">–</span></div>
+    </div>
+    <div class="surface" style="padding:10px 12px; border-radius:12px; border:1px solid var(--line); min-width:170px;">
+      <div class="muted" style="font-size:12px; display:flex; align-items:center; gap:8px;">
+        <span style="color:var(--amber)">⧗</span> In&nbsp;Progress
+      </div>
+      <div style="font-weight:700; font-size:20px;"><span id="k_progress">–</span></div>
+    </div>
+    <div class="surface" style="padding:10px 12px; border-radius:12px; border:1px solid var(--line); min-width:170px;">
+      <div class="muted" style="font-size:12px; display:flex; align-items:center; gap:8px;">
+        <span style="color:var(--green)">✔</span> Resolved
+      </div>
+      <div style="font-weight:700; font-size:20px;"><span id="k_resolved">–</span></div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="row" style="gap:10px; align-items:flex-end; margin:10px 0 6px">
+    <div>
+      <label class="muted">Filter by project</label>
+      <select id="issueProjectFilter" class="input" style="width:260px">
+        <option value="__all">All projects</option>
+        <option>DFS 4×4</option>
+        <option>XL-200 Bender</option>
+        <option>Conveyor Retrofit</option>
+        <option>AccuSeamer Rev-B</option>
+        <option>DXL-350 Docs</option>
+        <option>Alignment Jig</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Issues table -->
+  <div class="surface" style="padding:0; border-radius:12px; border:1px solid var(--line); overflow:hidden;">
+    <table class="table" style="width:100%; border-collapse:separate; border-spacing:0">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:10px 12px; background:#f9fafb; border-bottom:1px solid var(--line)">Project</th>
+          <th style="text-align:left; padding:10px 12px; background:#f9fafb; border-bottom:1px solid var(--line)">Issue description</th>
+          <th style="text-align:left; padding:10px 12px; background:#f9fafb; border-bottom:1px solid var(--line)">Created</th>
+          <th style="text-align:left; padding:10px 12px; background:#f9fafb; border-bottom:1px solid var(--line)">Status</th>
+          <th style="text-align:left; padding:10px 12px; background:#f9fafb; border-bottom:1px solid var(--line)">Created by</th>
+          <th style="text-align:left; padding:10px 12px; background:#f9fafb; border-bottom:1px solid var(--line)">Solved by</th>
+        </tr>
+      </thead>
+      <tbody id="issuesBody">
+        <!-- Use data-id for attachment lookup; class: open | progress | resolved -->
+        <tr data-id="412" data-project="DFS 4×4" class="open">
+          <td>DFS 4×4</td>
+          <td>Wrong gear pitch shipped (14T vs 16T)</td>
+          <td>09 Oct 2025 • 09:05</td>
+          <td><span class="pill red">Open</span></td>
+          <td>Marta</td>
+          <td class="muted">—</td>
+        </tr>
+        <tr data-id="399" data-project="AccuSeamer Rev-B" class="resolved">
+          <td>AccuSeamer Rev-B</td>
+          <td>Tooth burrs on pinion lot P-88</td>
+          <td>09 Oct 2025 • 18:40</td>
+          <td><span class="pill green">Resolved</span></td>
+          <td>Juris</td>
+          <td>Juris</td>
+        </tr>
+        <tr data-id="420" data-project="Conveyor Retrofit" class="open">
+          <td>Conveyor Retrofit</td>
+          <td>Conveyor chain tension variance</td>
+          <td>10 Oct 2025 • 11:34</td>
+          <td><span class="pill red">Open</span></td>
+          <td>Juris</td>
+          <td class="muted">—</td>
+        </tr>
+        <tr data-id="431" data-project="DXL-350 Docs" class="progress">
+          <td>DXL-350 Docs</td>
+          <td>Backlash measurement variance</td>
+          <td>10 Oct 2025 • 17:25</td>
+          <td><span class="pill">In&nbsp;progress</span></td>
+          <td>Elvijs</td>
+          <td class="muted">—</td>
+        </tr>
+        <tr data-id="299" data-project="AccuSeamer Rev-B" class="open">
+          <td>AccuSeamer Rev-B</td>
+          <td>Parts labeling inconsistent (doc template)</td>
+          <td>05 Oct 2025 • 14:55</td>
+          <td><span class="pill red">Open</span></td>
+          <td>Anna</td>
+          <td class="muted">—</td>
+        </tr>
+        <tr data-id="361" data-project="DFS 4×4" class="resolved">
+          <td>DFS 4×4</td>
+          <td>Idler gear tooth chipping</td>
+          <td>08 Oct 2025 • 16:10</td>
+          <td><span class="pill green">Resolved</span></td>
+          <td>Ivans</td>
+          <td>Ivans</td>
+        </tr>
+        <tr data-id="317" data-project="Alignment Jig" class="resolved">
+          <td>Alignment Jig</td>
+          <td>Alignment pin offset 0.15 mm</td>
+          <td>07 Oct 2025 • 12:05</td>
+          <td><span class="pill green">Resolved</span></td>
+          <td>Elvijs</td>
+          <td>Elvijs</td>
+        </tr>
+        <tr data-id="460" data-project="XL-200 Bender" class="progress">
+          <td>XL-200 Bender</td>
+          <td>Assembly upgrade verification checklist</td>
+          <td>06 Oct 2025 • 09:40</td>
+          <td><span class="pill">In&nbsp;progress</span></td>
+          <td>Marta</td>
+          <td class="muted">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+(function(){
+  const select = document.getElementById('issueProjectFilter');
+  const body   = document.getElementById('issuesBody');
+  const rows   = () => Array.from(body.querySelectorAll('tr'));
+
+  function refreshKPIs(){
+    const all = rows().filter(r=>r.style.display!=='none');
+    const kAll = all.length;
+    const kOpen = all.filter(r=>r.classList.contains('open')).length;
+    const kProg = all.filter(r=>r.classList.contains('progress')).length;
+    const kRes  = all.filter(r=>r.classList.contains('resolved')).length;
+    document.getElementById('k_all').textContent = kAll;
+    document.getElementById('k_open').textContent = kOpen;
+    document.getElementById('k_progress').textContent = kProg;
+    document.getElementById('k_resolved').textContent = kRes;
+  }
+
+  function apply(){
+    const proj = select.value;
+    rows().forEach(tr=>{
+      const ok = (proj === '__all') || (tr.dataset.project === proj);
+      tr.style.display = ok ? '' : 'none';
+    });
+    refreshKPIs();
+  }
+
+  // Populate dropdown from table (keeps it future-proof if rows change)
+  const projects = Array.from(new Set(rows().map(r => r.dataset.project))).sort();
+  projects.forEach(p=>{
+    if (!Array.from(select.options).some(o => o.value === p)){
+      const opt = document.createElement('option');
+      opt.textContent = p; opt.value = p;
+      select.appendChild(opt);
+    }
+  });
+
+  select.addEventListener('change', apply);
+  apply();
+})();
+</script>

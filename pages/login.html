@@ -1,0 +1,27 @@
+<div class="section">
+  <div class="row" style="gap:12px; margin-bottom:10px">
+    <div class="avatar" style="width:48px; height:48px; border-radius:14px"></div>
+    <div>
+      <h2>Sign in to OPT</h2>
+      <div class="muted">Email + Password, 2FA (TOTP) supported</div>
+    </div>
+  </div>
+  <div class="row" style="gap:16px; max-width:680px">
+    <div style="flex:1">
+      <label>Email</label>
+      <input class="input" type="email" placeholder="user@company.com"/>
+    </div>
+    <div style="flex:1">
+      <label>Password</label>
+      <input class="input" type="password" placeholder="••••••••"/>
+    </div>
+  </div>
+  <div class="row" style="gap:10px; margin:12px 0">
+    <input id="use2fa" type="checkbox" checked/>
+    <label for="use2fa" class="muted">Require two-factor authentication (TOTP)</label>
+  </div>
+  <div class="row" style="gap:10px">
+    <a href="#" class="btn green" onclick="load('overview')">Sign in</a>
+    <button class="btn">Forgot password</button>
+  </div>
+</div>
